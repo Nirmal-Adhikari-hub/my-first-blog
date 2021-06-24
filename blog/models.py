@@ -2,6 +2,8 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+# class has objects(object is an instance of a class) and model is the blueprint of an object
+#Post.objects means the objects of an Post model
 # Create your models here.
 class Post(models.Model): # Post is the name of our django model (models.Model) so that it can be saved on our database
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE) # ForeignKey is the link to another model
