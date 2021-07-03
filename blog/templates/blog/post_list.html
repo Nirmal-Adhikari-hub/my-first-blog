@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Message to you !!</title>
-    </head>
-    <body>
-        <!-- <p>Hello Baby</p>
-        <h3>Missing You &#127769; &#127769; <h1 style="font-size: 100px;">&#127801;</h1 font>	</h3> -->
-        
-        {% for post in posts %}
-            <article>
-                <time>published: {{  post.published_date }}</time>
-                <h2><a href="/">{{  post.title }}</a></h2>
-                <p>{{  post.text|linebreaksbr }}</p>
-            </article>
-        {% endfor %}
-    </body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+    <article class="post">
+        <time class="date">
+            {{ post.published_date }}
+        </time>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
+{% endblock %}
