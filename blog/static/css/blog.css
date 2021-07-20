@@ -6,6 +6,7 @@ body {
     padding-left: 15px;
     margin: 0%;
     overflow-x: hidden;
+    flex: auto;
 }
 
 .page-header {
@@ -73,3 +74,21 @@ h4 {
     color: #FFFFFF;
     background-color: #C25100;
 }
+.container
+{
+    flex: auto;
+}
+
+.top-new {
+    size: 100px;
+}
+
+svg{
+    width:30px;
+    height:30px;
+  }
+  svg * {
+    width:  100%;
+    height: 100%;
+    fill:   blue;
+  }
